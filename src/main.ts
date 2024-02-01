@@ -13,7 +13,11 @@ main();
 
 function main() {
   const accounts = readAccounts();
-  exportAccounts(accounts);
+
+  const accountsMap = new Map<string, Account>();
+  for (const account of accounts) accountsMap.set(account.username, account);
+
+  exportAccounts([...accountsMap.values()]);
 }
 
 function readAccounts() {
