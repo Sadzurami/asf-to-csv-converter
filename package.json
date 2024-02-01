@@ -1,0 +1,22 @@
+{
+  "name": "asf-to-csv-converter",
+  "version": "1.0.0",
+  "author": "Sadzurami (https://github.com/Sadzurami)",
+  "license": "MIT",
+  "bin": {
+    "app": "dist/main.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "build:package": "yarn run build && yarn pkg dist/main.js --target node18 --output asf-to-csv-converter.exe --config package.json --compress GZip",
+    "start:dev": "ts-node src/main.ts",
+    "start:prod": "node dist/main.js"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@types/node": "^20",
+    "pkg": "^5.8.1",
+    "prettier": "^3.1.1",
+    "typescript": "^5.3.3"
+  }
+}
